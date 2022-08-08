@@ -6,7 +6,7 @@
 
 ## 使用教程
 1. 准备：[Arch Linux](https://archlinux.org)
-- [Windows](https://www.microsoft.com/windows) 推荐使用 [ArchWSL](https://github.com/yuk7/ArchWSL) [详细教程](https://bytem.io/posts/install-arch-wsl)
+- [Windows](https://www.microsoft.com/windows) 推荐使用 [ArchHTTPL](https://github.com/yuk7/ArchHTTPL) [详细教程](https://bytem.io/posts/install-arch-wsl)
 - [Termux](https://github.com/hanxinhao000/ZeroTermux) 或`其他 Linux 发行版`推荐使用 [TMOE](https://gitee.com/mo2/linux) 安装 [Arch Linux](https://archlinux.org) 容器：
 ```
 bash -c "$(curl -L https://gitee.com/mo2/linux/raw/2/2)"
@@ -24,7 +24,7 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install.sh" && 
 视频教程：<https://b23.tv/av983453309>
 
 ## 使用说明
-- [Sagiri](https://sagiri-kawaii.github.io/sagiri-bot) <-WS连接-> [Mirai](https://docs.mirai.mamoe.net) <-网络连接-> [QQ服务器](https://im.qq.com)
+- [Sagiri](https://sagiri-kawaii.github.io/sagiri-bot) <-HTTP连接-> [Mirai](https://docs.mirai.mamoe.net) <-网络连接-> [QQ服务器](https://im.qq.com)
 - [Mirai](https://docs.mirai.mamoe.net)：提供QQ账号管理，收发消息等功能
 - [Sagiri](https://sagiri-kawaii.github.io/sagiri-bot)：对消息进行处理，完成目标操作
 
