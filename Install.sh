@@ -19,7 +19,7 @@ $Y- 正在设置语言$O
 echo "zh_CN.UTF-8 UTF-8">/etc/locale.gen||abort "语言写入失败"
 locale-gen||abort "语言设置失败";}
 abort_update(){ echo "
-$R! $@$O";[ "$N" -lt 8 ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
+$R! $@$O";[ "$N" -lt 10 ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
   2)SERVER="GitHub";URL="https://raw.githubusercontent.com/TimeRainStarSky/TRSS_Sagiri/main";;
   1)SERVER="Gitee";URL="https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main";;
@@ -27,8 +27,10 @@ download(){ case "$N" in
   4)SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/TRSS_Sagiri/raw/main";;
   5)SERVER="Coding";URL="https://trss.coding.net/p/TRSS/d/Sagiri/git/raw/main";;
   6)SERVER="Aliyun";URL="https://code.aliyun.com/TimeRainStarSky/TRSS_Sagiri/raw/main";;
-  7)SERVER="Bitbucket";URL="https://bitbucket.org/TimeRainStarSky/TRSS_Sagiri/raw/main";;
-  8)SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_Sagiri@main"
+  7)SERVER="GitCode";URL="https://gitcode.net/TimeRainStarSky1/TRSS_Sagiri/raw/main";;
+  8)SERVER="JiHuLab";URL="https://jihulab.com/TimeRainStarSky/TRSS_Sagiri/raw/main";;
+  9)SERVER="Bitbucket";URL="https://bitbucket.org/TimeRainStarSky/TRSS_Sagiri/raw/main";;
+  10)SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_Sagiri@main"
   esac;echo "
   正在从 $SERVER 服务器 下载版本信息";GETVER="$(geturl "$URL/version")"||abort_update "下载失败";NEWVER="$(echo -n "$GETVER"|sed -n s/^version=//p)";NEWNAME="$(echo -n "$GETVER"|sed -n s/^name=//p)";MD5="$(echo -n "$GETVER"|sed -n s/^md5=//p)";[ -n "$NEWVER" ]&&[ -n "$NEWNAME" ]&&[ -n "$MD5" ]||abort_update "下载文件版本信息缺失";echo "
 $B  最新版本：$G$NEWNAME$C ($NEWVER)$O
