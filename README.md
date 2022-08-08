@@ -32,11 +32,8 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install.sh" && 
 - 问：发消息错误：46
 - 答：账号被风控
 
-- 问：无法连接到反向 WebSocket Universal 服务器
-- 答：请确认 Sagiri 正常运行并启动了 Uvicorn WebSocket 服务器
-
 - 问：address already in use
-- 答：WebSocket 端口被占用，请尝试停止占用进程、重启设备，或修改配置文件，更改 WebSocket 端口
+- 答：端口被占用，请尝试停止占用进程、重启设备，或修改配置文件，更改端口
 
 - 问：open terminal failed: not a terminal
 - 答：TMOE proot 容器首次启动会出现，退出容器重启就行了
