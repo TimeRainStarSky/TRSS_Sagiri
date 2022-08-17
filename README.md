@@ -1,7 +1,6 @@
 <div align="center">
-  <a href="https://moegirl.org.cn/%E4%BA%9A%E6%89%98%E8%8E%89">
-    <img src="Picture/亚托莉.png" alt="亚托莉">
-  </a>
+
+[![亚托莉](Picture/亚托莉.png)](https://moegirl.org.cn/亚托莉)
 
 # TRSS Sagiri
 纱雾机器人管理脚本
@@ -11,6 +10,7 @@
 [![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/TRSS_Sagiri?color=green&label=发布版本)](https://github.com/TimeRainStarSky/TRSS_Sagiri/releases/latest)
 
 [![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_Sagiri/count.svg)](https://timerainstarsky.github.io/TRSS_Sagiri)
+
 </div>
 
 ## 使用教程
@@ -59,15 +59,9 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install.sh" && 
 - Telegram：[TimeRainStarSky](https://t.me/TimeRainStarSky)
 
 ## 界面展示
-<a href="https://TimeRainStarSky.GitHub.io/TRSS_Sagiri">
-  <img src="Picture/Main.png" alt="主界面">
-</a>
-<a href="https://github.com/iTXTech/mirai-console-loader">
-  <img src="Picture/Mirai.png" alt="Mirai">
-</a>
-<a href="https://sagiri-kawaii.github.io/sagiri-bot">
-  <img src="Picture/Sagiri.png" alt="Sagiri">
-</a>
+[![主界面](Picture/Main.png)](https://TimeRainStarSky.GitHub.io/TRSS_Sagiri)
+[![Mirai](Picture/Mirai.png)](https://github.com/iTXTech/mirai-console-loader)
+[![Sagiri](Picture/Sagiri.png)](https://sagiri-kawaii.github.io/sagiri-bot)
 
 ## 赞助支持
 - 爱发电：<https://afdian.net/@TimeRainStarSky>
