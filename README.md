@@ -50,9 +50,15 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install.sh" && 
 - Telegram：[TimeRainStarSky](https://t.me/TimeRainStarSky)
 
 ## 界面展示
-[![主界面](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_Sagiri@main/Picture/Main.png)](https://TimeRainStarSky.GitHub.io/TRSS_Sagiri)
-[![Mirai](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_Sagiri@main/Picture/Mirai.png)](https://github.com/iTXTech/mirai-console-loader)
-[![Sagiri](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_Sagiri@main/Picture/Sagiri.png)](https://sagiri-kawaii.github.io/sagiri-bot)
+<a href="https://TimeRainStarSky.GitHub.io/TRSS_Sagiri">
+  <img src="Picture/Main.png" alt="主界面">
+</a>
+<a href="https://github.com/iTXTech/mirai-console-loader">
+  <img src="Picture/Mirai.png" alt="Mirai">
+</a>
+<a href="https://sagiri-kawaii.github.io/sagiri-bot">
+  <img src="Picture/Sagiri.png" alt="Sagiri">
+</a>
 
 ## 赞助支持
 - 爱发电：<https://afdian.net/@TimeRainStarSky>
