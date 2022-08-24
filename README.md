@@ -7,9 +7,9 @@
 
 [![Stars](https://img.shields.io/github/stars/TimeRainStarSky/TRSS_Sagiri?color=yellow&label=收藏)](https://github.com/TimeRainStarSky/TRSS_Sagiri/stargazers)
 [![Downloads](https://img.shields.io/github/downloads/TimeRainStarSky/TRSS_Sagiri/total?color=blue&label=下载)](https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install.sh)
-[![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/TRSS_Sagiri?color=green&label=发布版本)](https://github.com/TimeRainStarSky/TRSS_Sagiri/releases/latest)
+[![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/TRSS_Sagiri?color=green&label=发行版)](https://github.com/TimeRainStarSky/TRSS_Sagiri/releases/latest)
 
-[![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_Sagiri/count.svg)](https://timerainstarsky.github.io/TRSS_Sagiri)
+[![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_Sagiri/count.svg)](https://github.com/TimeRainStarSky/TRSS_Sagiri)
 
 </div>
 
