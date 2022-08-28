@@ -5,9 +5,9 @@
 # TRSS Sagiri
 纱雾机器人管理脚本
 
-[![Stars](https://img.shields.io/github/stars/TimeRainStarSky/TRSS_Sagiri?color=yellow&label=收藏)](https://github.com/TimeRainStarSky/TRSS_Sagiri/stargazers)
-[![Downloads](https://img.shields.io/github/downloads/TimeRainStarSky/TRSS_Sagiri/total?color=blue&label=下载)](https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install.sh)
-[![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/TRSS_Sagiri?color=green&label=发行版)](https://github.com/TimeRainStarSky/TRSS_Sagiri/releases/latest)
+[![Stars](https://img.shields.io/github/stars/TimeRainStarSky/TRSS_Sagiri?color=yellow&label=收藏)](../../stargazers)
+[![Downloads](https://img.shields.io/github/downloads/TimeRainStarSky/TRSS_Sagiri/total?color=blue&label=下载)](Install.sh)
+[![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/TRSS_Sagiri?color=green&label=发行版)](../../releases/latest)
 
 [![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_Sagiri/count.svg)](https://github.com/TimeRainStarSky/TRSS_Sagiri)
 
@@ -63,10 +63,10 @@ bash <(curl -L https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install.sh
 [![Sagiri](Picture/Sagiri.png)](https://sagiri-kawaii.github.io/sagiri-bot)
 
 ## 相关项目
-[![TRSS Liteyuki 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Liteyuki&show_owner=true)](https://github.com/TimeRainStarSky/TRSS_Liteyuki)
-[![TRSS Yunzai 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Yunzai&show_owner=true)](https://github.com/TimeRainStarSky/TRSS_Yunzai)
-[![TRSS Sagiri 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Sagiri&show_owner=true)](https://github.com/TimeRainStarSky/TRSS_Sagiri)
-[![TRSS OneBot 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_OneBot&show_owner=true)](https://github.com/TimeRainStarSky/TRSS_OneBot)
+[![TRSS Liteyuki 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Liteyuki&show_owner=true)](../../../TRSS_Liteyuki)
+[![TRSS Yunzai 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Yunzai&show_owner=true)](../../../TRSS_Yunzai)
+[![TRSS Sagiri 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Sagiri&show_owner=true)](../../../TRSS_Sagiri)
+[![TRSS OneBot 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_OneBot&show_owner=true)](../../../TRSS_OneBot)
 
 ## 赞助支持
 - 爱发电：<https://afdian.net/@TimeRainStarSky>
