@@ -273,12 +273,12 @@ echo 'FROM hub-mirror.c.163.com/library/archlinux
 COPY mirrorlist /etc/pacman.d
 COPY pacman.conf /etc
 COPY zh_CN /usr/share/i18n/locales
-COPY tssi /bin
 RUN pacman -Syy --noconfirm --needed --overwrite "*" archlinux-keyring archlinuxcn-keyring &&\
     pacman -Syu --noconfirm --needed --overwrite "*" curl git libnewt micro neofetch perl ranger tmux &&\
     sed -i "s/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g" /etc/locale.gen &&\
-    locale-gen &&\
-    chmod 755 /bin/tssi'>Dockerfile
+    locale-gen
+COPY tssi /bin
+RUN chmod 755 /bin/tssi'>Dockerfile
 docker build -t trss:sagiri .||abort "Docker 容器构建失败"
 echo "
 $Y- 正在启动 Docker 容器$O
