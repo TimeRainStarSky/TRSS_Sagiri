@@ -1,5 +1,5 @@
 #TRSS Sagiri Docker 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202209240
+NAME=v1.0.0;VERSION=202209250
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B———————————————————————————
 $R TRSS$Y Sagiri$G Docker$C Script$O
@@ -283,7 +283,7 @@ docker build -t trss:sagiri .||abort "Docker 容器构建失败"
 echo "
 $Y- 正在启动 Docker 容器$O
 "
-docker run -itd --name TRSS_Sagiri -v "$DIR":/root/TRSS_Sagiri --restart=always trss:sagiri||abort "Docker 容器启动失败"
+docker run -itd --name TRSS_Sagiri -v "$DIR":/root/TRSS_Sagiri --restart=always trss:sagiri||abort "Docker 容器启动失败，若要重装容器，请先停止并删除已安装容器"
 echo -n "docker exec -it TRSS_Sagiri bash '/root/TRSS_Sagiri/Main.sh' "'"$@"'>/bin/tssi||abort "脚本执行命令/bin/tssi设置失败"
 chmod 755 /bin/tssi||abort "脚本权限设置失败"
 echo "
