@@ -281,6 +281,7 @@ RUN pacman -Syy --noconfirm --needed --overwrite "*" archlinux-keyring archlinux
 COPY tssi /bin
 RUN chmod 755 /bin/tssi'>Dockerfile
 docker build -t trss:sagiri .||abort "Docker 容器构建失败"
+docker image prune -f
 echo "
 $Y- 正在启动 Docker 容器$O
 "
