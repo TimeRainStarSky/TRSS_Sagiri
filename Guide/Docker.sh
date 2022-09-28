@@ -285,7 +285,7 @@ docker image prune -f
 echo "
 $Y- 正在启动 Docker 容器$O
 "
-docker run -itPd --name TRSS_Sagiri -v "$DIR":/root/TRSS_Sagiri --restart=always trss:sagiri||abort "Docker 容器启动失败，若要重装容器，请先停止并删除已安装容器"
+docker run -itPd -h TRSS-Sagiri --name TRSS_Sagiri -v "$DIR":/root/TRSS_Sagiri --restart=always trss:sagiri||abort "Docker 容器启动失败，若要重装容器，请先停止并删除已安装容器"
 echo -n "docker exec -it TRSS_Sagiri bash '/root/TRSS_Sagiri/Main.sh' "'"$@"'>/bin/tssi||abort "脚本执行命令/bin/tssi设置失败"
 chmod 755 /bin/tssi||abort "脚本权限设置失败"
 echo "
