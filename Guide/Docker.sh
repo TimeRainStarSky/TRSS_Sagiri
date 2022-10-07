@@ -1,5 +1,5 @@
 #TRSS Sagiri Docker 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202210070
+NAME=v1.0.0;VERSION=202210071
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B———————————————————————————
 $R TRSS$Y Sagiri$G Docker$C Script$O
@@ -268,7 +268,6 @@ END LC_ADDRESS
 LC_MEASUREMENT
 copy "i18n"
 END LC_MEASUREMENT'>zh_CN
-echo -n "bash '$DIR/Main.sh' "'"$@"'>tssi
 echo 'FROM hub-mirror.c.163.com/library/archlinux
 COPY mirrorlist /etc/pacman.d
 COPY pacman.conf /etc
@@ -278,8 +277,8 @@ RUN pacman -Syy --noconfirm --needed --overwrite "*" archlinux-keyring archlinux
     sed -i "s/#.*zh_CN\.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g" /etc/locale.gen &&\
     locale-gen &&\
     rm -rf /var/cache
-COPY tssi /usr/local/bin
-RUN chmod 755 /usr/local/bin/tssi &&\
+RUN echo -n '\''bash /root/TRSS_Sagiri/Main.sh "$@"'\''>/usr/local/bin/tssi &&\
+    chmod 755 /usr/local/bin/tssi &&\
     pacman -Syu --noconfirm --needed --overwrite "*" jre-openjdk unzip gcc &&\
     rm -rf /var/cache'>Dockerfile
 docker build -t trss:sagiri .||abort "Docker 容器构建失败"
