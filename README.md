@@ -23,7 +23,12 @@
 ```
 bash <(curl -L https://gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install.sh)
 ```
+附加功能：自定义 安装路径 `HOME` 和 启动命令 `CMD`（可用于多开）
 
+举例：将脚本安装至 `/Bot` 启动命令 `trss`
+```
+HOME=/Bot CMD=trss bash xxx
+```
 3. 启动：`tssi`
 
 视频教程：<https://bilibili.com/av983453309>
