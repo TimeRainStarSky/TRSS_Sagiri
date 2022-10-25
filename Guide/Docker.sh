@@ -1,5 +1,5 @@
 #TRSS Sagiri Docker 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202210230
+NAME=v1.0.0;VERSION=202210250
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B———————————————————————————
 $R TRSS$Y Sagiri$G Docker$C Script$O
@@ -62,25 +62,6 @@ echo "
 $Y- 正在构建 Docker 容器$O
 "
 mktmp&&cd "$TMP"
-echo 'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch'>mirrorlist
-echo '[options]
-Architecture = auto
-Color
-ParallelDownloads = 5
-[core]
-Include = /etc/pacman.d/mirrorlist
-[extra]
-Include = /etc/pacman.d/mirrorlist
-[community]
-Include = /etc/pacman.d/mirrorlist
-[archlinuxcn]
-Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-Server = https://repo.archlinuxcn.org/$arch
-SigLevel = Never'>pacman.conf
 echo 'comment_char %
 escape_char /
 
@@ -270,12 +251,40 @@ END LC_ADDRESS
 LC_MEASUREMENT
 copy "i18n"
 END LC_MEASUREMENT'>zh_CN
-echo 'FROM hub-mirror.c.163.com/library/archlinux
-ENV TERM=xterm-256color
+case "$(uname -m)" in
+  aarch64|arm64|armv8*|armv9*)echo 'Server = https://mirrors.ustc.edu.cn/archlinuxarm/$arch/$repo
+Server = https://mirrors.bfsu.edu.cn/archlinuxarm/$arch/$repo
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxarm/$arch/$repo
+Server = https://mirrors.163.com/archlinuxarm/$arch/$repo
+Server = https://mirror.archlinuxarm.org/$arch/$repo'>mirrorlist;echo '[options]
+Architecture = aarch64'>pacman.conf;echo "FROM menci/archlinuxarm">Dockerfile;;
+  *)echo 'Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
+Server = http://mirrors.163.com/archlinux/$repo/os/$arch'>mirrorlist;echo '[options]
+Architecture = auto'>pacman.conf;echo "FROM hub-mirror.c.163.com/library/archlinux">Dockerfile
+esac
+echo 'Color
+ParallelDownloads = 5
+[core]
+Include = /etc/pacman.d/mirrorlist
+[extra]
+Include = /etc/pacman.d/mirrorlist
+[community]
+Include = /etc/pacman.d/mirrorlist
+[archlinuxcn]
+Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+Server = https://repo.archlinuxcn.org/$arch
+SigLevel = Never'>>pacman.conf
+echo 'ENV TERM=xterm-256color
 COPY mirrorlist /etc/pacman.d
 COPY pacman.conf /etc
 COPY zh_CN /usr/share/i18n/locales
-RUN pacman -Syy --noconfirm --needed --overwrite "*" archlinux-keyring archlinuxcn-keyring &&\
+RUN pacman-key --init &&\
+    pacman-key --populate &&\
+    pacman -Syy --noconfirm --needed --overwrite "*" archlinux-keyring archlinuxcn-keyring &&\
     pacman -Syu --noconfirm --needed --overwrite "*" curl dialog git tmux perl micro ranger neofetch htop nethogs ncdu chromium ffmpeg python-poetry &&\
     sed -i "s/#.*zh_CN\.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g" /etc/locale.gen &&\
     locale-gen &&\
@@ -284,7 +293,7 @@ RUN pacman -Syy --noconfirm --needed --overwrite "*" archlinux-keyring archlinux
 RUN echo -n '\''bash /root/TRSS_Sagiri/Main.sh "$@"'\''>/usr/local/bin/tssi &&\
     chmod 755 /usr/local/bin/tssi &&\
     pacman -Syu --noconfirm --needed --overwrite "*" jre-openjdk unzip gcc &&\
-    rm -rf /var/cache'>Dockerfile
+    rm -rf /var/cache'>>Dockerfile
 docker build -t trss:sagiri .||abort "Docker 容器构建失败"
 docker image prune -f
 echo "
