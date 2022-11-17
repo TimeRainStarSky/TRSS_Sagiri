@@ -7,7 +7,7 @@
 ## 容器安装
 
 ```
-bash <(curl -L gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Guide/Docker.sh)
+bash <(curl -L gitee.com/TimeRainStarSky/TRSS_Sagiri/raw/main/Install-Docker.sh)
 ```
 
 <details><summary>附加功能</summary>
