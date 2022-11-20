@@ -1,5 +1,5 @@
 #TRSS Sagiri MSYS2 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202211200
+NAME=v1.0.0;VERSION=202211210
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y Sagiri$G Install$C Script$O
@@ -16,7 +16,8 @@ MSYS2ENV=mingw-w64-ucrt-x86_64
 type pacman &>/dev/null&&echo "
 $Y- 正在安装依赖$O
 "||abort "找不到 pacman 命令，请确认安装了正确的 MSYS2 环境"
-pacman -Syu --noconfirm --needed --overwrite "*" curl dialog git tmux perl fish ncdu perl-ack unzip $MSYS2ENV-fd $MSYS2ENV-fzf $MSYS2ENV-bat||abort "依赖安装失败"
+pacman -Syu --noconfirm --needed --overwrite "*" curl dialog git tmux perl neofetch fish ncdu perl-ack unzip $MSYS2ENV-fd $MSYS2ENV-fzf $MSYS2ENV-bat||abort "依赖安装失败"
+type fastfetch &>/dev/null||ln -vsf neofetch "$(dirname "$(command -v neofetch)")/fastfetch"
 [ -s /ucrt64/bin/fdo ]||{ mv -vf /ucrt64/bin/fd /ucrt64/bin/fdo;echo -n 'fdo "$@"|tr '"'\\' '/'">/ucrt64/bin/fd;}
 
 Title="TRSS Sagiri Install Script $NAME ($VERSION)";BackTitle="作者：时雨🌌星空"
@@ -51,7 +52,7 @@ gitserver||exit
 mktmp
 geturl "$URL/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl-shared.zip">"$TMP/ffmpeg.zip"||abort "下载失败"
 unzip -oq "$TMP/ffmpeg.zip" -d "$TMP"||abort "解压失败"
-mv -vf "$TMP/ffmpeg-master-latest-win64-gpl-shared/bin/"* /usr/bin||abort "安装失败";}
+mv -vf "$TMP/"*/bin/* /usr/bin||abort "安装失败";}
 
 type java &>/dev/null||{ echo "
 $Y- 正在安装 Java 18$O
