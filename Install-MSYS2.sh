@@ -56,10 +56,9 @@ mv -vf "$TMP/ffmpeg-master-latest-win64-gpl-shared/bin/"* /usr/bin||abort "安�
 type java &>/dev/null||{ echo "
 $Y- 正在安装 Java$O
 "
-gitserver||exit
 mktmp
 GETVER="$(geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/18/jre/x64/windows"|grep 'href=".*\.zip'|sed 's|.*href="||;s|\.zip.*|.zip|')"&&\
-geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/18/jre/x64/windows/$GETURL">"$TMP/java.zip"||abort "下载失败"
+geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/18/jre/x64/windows/$GETVER">"$TMP/java.zip"||abort "下载失败"
 unzip -oq "$TMP/java.zip" -d "$TMP"||abort "解压失败"
 rm -rf /usr/share/java&&\
 mkdir -vp /usr/share/java&&\
