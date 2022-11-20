@@ -54,7 +54,7 @@ unzip -oq "$TMP/ffmpeg.zip" -d "$TMP"||abort "解压失败"
 mv -vf "$TMP/ffmpeg-master-latest-win64-gpl-shared/bin/"* /usr/bin||abort "安装失败";}
 
 type java &>/dev/null||{ echo "
-$Y- 正在安装 Java$O
+$Y- 正在安装 Java 18$O
 "
 mktmp
 GETVER="$(geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/18/jre/x64/windows"|grep 'href=".*\.zip'|sed 's|.*href="||;s|\.zip.*|.zip|')"&&\
@@ -62,7 +62,7 @@ geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/18/jre/x64/windows/$GETVER
 unzip -oq "$TMP/java.zip" -d "$TMP"||abort "解压失败"
 rm -rf /usr/share/java&&\
 mv -vf "$TMP/"*/ /usr/share/java&&\
-echo -n '/usr/share/java/bin/java "$@"'>/usr/bin/java||abort "安装失败";}
+echo -n 'exec /usr/share/java/bin/java "$@"'>/usr/bin/java||abort "安装失败";}
 
 type python &>/dev/null||{ echo "
 $Y- 正在安装 Python 3.10.8$O
@@ -78,7 +78,7 @@ import io
 sys.stdin = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 sys.stderr = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')">/usr/share/python/sitecustomize.py&&\
-echo -n '/usr/share/python/python "$@"'>/usr/bin/python||abort "安装失败";}
+echo -n 'exec /usr/share/python/python "$@"'>/usr/bin/python||abort "安装失败";}
 
 type pip &>/dev/null||{ echo "
 $Y- 正在安装 pip$O
@@ -87,13 +87,13 @@ mktmp
 geturl "https://bootstrap.pypa.io/pip/pip.pyz">"$TMP/pip.pyz"||abort "下载失败"
 python "$TMP/pip.pyz" config set global.index-url "https://pypi.mirrors.ustc.edu.cn/simple"&&\
 python "$TMP/pip.pyz" install -U pip&&\
-echo -n 'python -m pip "$@"'>/usr/bin/pip||abort "安装失败";}
+echo -n 'exec python -m pip "$@"'>/usr/bin/pip||abort "安装失败";}
 
 type poetry &>/dev/null||{ echo "
 $Y- 正在安装 Poetry$O
 "
 pip install -U poetry&&\
-echo -n 'python -m poetry "$@"'>/usr/bin/poetry||abort "安装失败";}
+echo -n 'exec python -m poetry "$@"'>/usr/bin/poetry||abort "安装失败";}
 
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt 10 ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
