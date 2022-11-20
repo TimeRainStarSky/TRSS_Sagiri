@@ -61,7 +61,6 @@ GETVER="$(geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/18/jre/x64/windo
 geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/18/jre/x64/windows/$GETVER">"$TMP/java.zip"||abort "下载失败"
 unzip -oq "$TMP/java.zip" -d "$TMP"||abort "解压失败"
 rm -rf /usr/share/java&&\
-mkdir -vp /usr/share/java&&\
 mv -vf "$TMP/"*/ /usr/share/java&&\
 echo -n '/usr/share/java/bin/java "$@"'>/usr/bin/java||abort "安装失败";}
 
