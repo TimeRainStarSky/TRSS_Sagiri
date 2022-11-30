@@ -27,7 +27,7 @@ DIR=/Bot CMD=trss DKNAME=TRSS bash <(x
 - 查看容器：`docker ps -a`
 - 启动容器：`docker start TRSS_Sagiri`（默认为开机自启，无需手动启动）
 - 停止容器：`docker stop -t 0 TRSS_Sagiri`
-- 删除容器：`docker rm TRSS_Sagiri`
+- 删除容器：`docker rm -f TRSS_Sagiri`
 - 重建容器：
 
 ```
