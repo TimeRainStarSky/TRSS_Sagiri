@@ -34,7 +34,7 @@ docker run -itPd
   -h TRSS-Sagiri #主机名
   --name TRSS_Sagiri #容器名
   -v ~/TRSS_Sagiri:/root/TRSS_Sagiri #数据映射
-  --restart=always #自启动
+  --restart always #自启动
   -p 2536:80 #端口映射
   trss:sagiri
 ```
