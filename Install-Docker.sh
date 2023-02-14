@@ -1,5 +1,5 @@
 #TRSS Sagiri Docker 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202302040
+NAME=v1.0.0;VERSION=202302140
 R="[1;31m" G="[1;32m" Y="[1;33m" C="[1;36m" B="[1;m" O="[m"
 echo "$B———————————————————————————
 $R TRSS$Y Sagiri$G Docker$C Script$O
@@ -126,10 +126,11 @@ RUN pacman -Syu --noconfirm --needed --overwrite "*" jre-openjdk\
 RUN echo -n '\''exec bash /root/TRSS_Sagiri/Main.sh "$@"'\''>/usr/local/bin/tssi\
  && chmod 755 /usr/local/bin/tssi'>Dockerfile
 docker build -t trss:sagiri .||abort "Docker 容器构建失败"
-docker image prune -f
 echo "
 $Y- 正在启动 Docker 容器$O
 "
+docker rm -f $DKNAME 2>/dev/null
+docker image prune -f
 docker run -itd -h TRSS-Sagiri --name $DKNAME -v "$DIR":/root/TRSS_Sagiri --restart always trss:sagiri||abort "Docker 容器启动失败，若要重装容器，请先删除已安装容器，若要多开容器，请修改容器名"
 mkdir -vp "$CMDPATH"&&echo -n "exec docker exec -it $DKNAME bash /root/TRSS_Sagiri/Main.sh "'"$@"'>"$CMDPATH/$CMD"&&chmod 755 "$CMDPATH/$CMD"||abort "脚本执行命令 $CMDPATH/$CMD 设置失败，手动执行命令：docker exec -it $DKNAME bash /root/TRSS_Sagiri/Main.sh"
 echo "
