@@ -1,5 +1,5 @@
 #TRSS Sagiri MSYS2 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202302200
+NAME=v1.0.0;VERSION=202303020
 R="[1;31m" G="[1;32m" Y="[1;33m" C="[1;36m" B="[1;m" O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y Sagiri$G Install$C Script$O
@@ -40,7 +40,7 @@ $Y- 正在安装 Java 19$O
 mktmp
 GETVER="$(geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/19/jre/x64/windows"|grep 'href=".*\.zip'|sed 's|.*href="||;s|\.zip.*|.zip|')"&&
 geturl "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/19/jre/x64/windows/$GETVER">"$TMP/java.zip"||abort "下载失败"
-unzip -oq "$TMP/java.zip" -d "$TMP"||abort "解压失败"
+unzip -o "$TMP/java.zip" -d "$TMP"||abort "解压失败"
 rm -rf /win/java&&
 mv -vf "$TMP/"*/ /win/java&&
 mkpath /win/java/bin||abort "安装失败";}
@@ -53,8 +53,8 @@ mktmp
 geturl "https://registry.npmmirror.com/-/binary/python/$GETVER/python-$GETVER-embed-amd64.zip">"$TMP/python.zip"||abort "下载失败"
 rm -rf /win/python&&
 mkdir -vp /win/python/Lib&&
-unzip -oq "$TMP/python.zip" -d /win/python&&
-unzip -oq /win/python/*.zip -d /win/python/Lib&&
+unzip -o "$TMP/python.zip" -d /win/python&&
+unzip -o /win/python/*.zip -d /win/python/Lib&&
 rm -rf /win/python/*.zip /win/python/*._pth||abort "解压失败"
 echo -n "import sys
 import io
